@@ -46,9 +46,9 @@ public abstract class Bag {
         this.color = color;
     }
 
-    
+
     public boolean addItem(String item){
-        if(contents.length<capacity){
+        if(numberOfContents<capacity){
             contents[numberOfContents] = item;
             numberOfContents++;
             return true;
@@ -71,11 +71,11 @@ public abstract class Bag {
      */
 
     public String popItem(){
-        if(numberOfContents== 0){
+        if(numberOfContents == 0){
             return null;
         }else{
-            String item = contents[numberOfContents];
-            contents[numberOfContents] = "";
+            String item = contents[numberOfContents-1];
+            contents[numberOfContents-1] = "";
             numberOfContents--;
             return item;
         }
